@@ -15,19 +15,40 @@ public class MessageControllerGETUsingModelResponse
 	public String getMsgUsingModel(Model model) //Response is set in  model attribute and get the message in JSP using JSTL tags
 	{
 		String responseMessage = "Hello World Using Model Response 1st Way";
-		model.addAttribute("message",responseMessage);
+		model.addAttribute("messageModel",responseMessage);
 		return "messageDetails";
 	}
-	
+
 	@RequestMapping(value = "/getMessageUsingModelSecondWay", method = RequestMethod.GET)
 	public String getMsgUsingModelSecondWay(Model model) //Response is set in  model attribute and get the message in JSP using JSTL tags
 	{
 		String responseMessage = "Hello World Using Model Response 2nd Way";
 		String responseMessageFrom = "Mithun";
 		String responseMessageTime = "16-03-2015";
-		model.addAttribute("message",responseMessage);
-		model.addAttribute("messageFrom",responseMessageFrom);
-		model.addAttribute("messageTime",responseMessageTime);
+		model.addAttribute("messageModel",responseMessage);
+		model.addAttribute("messageFromModel",responseMessageFrom);
+		model.addAttribute("messageTimeModel",responseMessageTime);
 		return "messageDetails";
 	}
+
+	/*Code Backup 
+	 @RequestMapping(value = "/getMessageUsingModelFirstWay", method = RequestMethod.GET)
+	public String getMsgUsingModel(Model model) //Response is set in  model attribute and get the message in JSP using JSTL tags
+	{
+		String responseMessage = "Hello World Using Model Response 1st Way";
+		model.addAttribute("messageModel",responseMessage);
+		return "messageDetails";
+	}
+
+	@RequestMapping(value = "/getMessageUsingModelSecondWay", method = RequestMethod.GET)
+	public String getMsgUsingModelSecondWay(Model model) //Response is set in  model attribute and get the message in JSP using JSTL tags
+	{
+		String responseMessage = "Hello World Using Model Response 2nd Way";
+		String responseMessageFrom = "Mithun";
+		String responseMessageTime = "16-03-2015";
+		model.addAttribute("messageModel",responseMessage);
+		model.addAttribute("messageFromModel",responseMessageFrom);
+		model.addAttribute("messageTimeModel",responseMessageTime);
+		return "messageDetails";
+	}*/
 }

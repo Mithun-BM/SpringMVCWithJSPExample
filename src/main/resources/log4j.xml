@@ -12,7 +12,7 @@
 	
 	<!-- File Appender -->
 	 <appender name="file" class="org.apache.log4j.FileAppender">
-       <param name="File" value="/home/emithbm/Downloads/SpringHelloWorldJSP.txt" />
+       <param name="File" value="/home/emithbm/Logs_Files/SpringMVCWithJSPExample.txt" />
        <layout class="org.apache.log4j.PatternLayout">
           <param name="ConversionPattern" value="%-7p %d [%t] %c %x - %m%n"/>
        </layout>

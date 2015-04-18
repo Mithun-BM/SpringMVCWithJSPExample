@@ -1,34 +1,54 @@
 package com.example.controller;
 
-import org.springframework.http.HttpStatus;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 //Second Way Of Spring MVC Controller
 @Controller
+@RequestMapping("/helloWorldMessage2")
 public class HelloWorldController2{
 
-	//If you are sending data back to client then there should be @ResponseBody annotation 
-	@RequestMapping(value = "/hello2", method = RequestMethod.GET)
-	@ResponseStatus(HttpStatus.OK)
-	@ResponseBody
-	public String printHello2() {
-		System.out.println("Inside printHello2()");
-		return "Hello2 Spring MVC Framework!"; //"Hello Spring MVC Framework!";
+	private static final Logger logger = LoggerFactory
+			.getLogger(HelloWorldController2.class);
+
+	@RequestMapping(method = RequestMethod.GET)
+	public String getHelloMessage(Model model) {
+		logger.info("Inside HelloWorldController2 --> getHelloMessage()");
+		model.addAttribute("message", "HelloWorldController2 Spring MVC Framework!");
+		return "helloWorld";
+	}
+
+	@RequestMapping(method = RequestMethod.POST)
+	public String postHelloMessage(Model model) {
+		logger.info("Inside HelloWorldController2 --> postHelloMessage()");
+		model.addAttribute("message", "HelloWorldController2 Spring MVC Framework! Data Posted Successfully");
+		return "helloWorld";
 	}
 
 }
 
-/*@Controller
+/*//Code Backup 
+@Controller
+@RequestMapping("/helloWorldMessage2")
 public class HelloWorldController2{
 
-	@RequestMapping(value = "/hello2", method = RequestMethod.GET)
-	public String printHello(ModelMap model) {
-		model.addAttribute("message", "Hello Spring MVC Framework!");
-		return "hello";
+	private static final Logger logger = LoggerFactory
+			.getLogger(HelloWorldController2.class);
+
+	@RequestMapping(method = RequestMethod.GET)
+	public String getHelloMessage(Model model) {
+		logger.info("Inside HelloWorldController2 --> getHelloMessage()");
+		model.addAttribute("message", "HelloWorldController2 Spring MVC Framework!");
+		return "helloWorld";
 	}
 
-}*/
+	@RequestMapping(method = RequestMethod.POST)
+	public String postHelloMessage(Model model) {
+		logger.info("Inside HelloWorldController2 --> postHelloMessage()");
+		model.addAttribute("message", "HelloWorldController2 Spring MVC Framework! Data Posted Successfully");
+		return "helloWorld";
+	}*/
