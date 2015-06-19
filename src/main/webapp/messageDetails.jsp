@@ -49,10 +49,10 @@
 		<!-- For each iteration in using JSTL -->
 		<ul>
 			<c:forEach items="${messageList2Model}" var="value">
-				<li><c:out value="${value.mesageId}" /></li>
+				<li><c:out value="${value.messageId}" /></li>
 				<!-- Either this -->
-				<li><c:out value="${value.mesageContent}" /></li>
-				<li><c:out value="${value.mesageTime}" /></li>
+				<li><c:out value="${value.messageContent}" /></li>
+				<li><c:out value="${value.messageTime}" /></li>
 
 				<!-- <li><c:out value="${value.getMesageContent()}"/></li> Or Either this. Both of them work 
 		  		<li><c:out value="${value.getMesageId()}"/></li>
@@ -76,10 +76,10 @@
 		<!-- For each iteration in using JSTL -->
 		<ul>
 			<c:forEach items="${messageList2ModelMap}" var="value">
-				<li><c:out value="${value.mesageId}" /></li>
+				<li><c:out value="${value.messageId}" /></li>
 				<!-- Either this -->
-				<li><c:out value="${value.mesageContent}" /></li>
-				<li><c:out value="${value.mesageTime}" /></li>
+				<li><c:out value="${value.messageContent}" /></li>
+				<li><c:out value="${value.messageTime}" /></li>
 
 				<!-- <li><c:out value="${value.getMesageContent()}"/></li> Or Either this. Both of them work 
 		  		<li><c:out value="${value.getMesageId()}"/></li>

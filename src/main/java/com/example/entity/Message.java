@@ -3,27 +3,28 @@ package com.example.entity;
 
 public class Message {
 
-	private Integer mesageId;
-	private String mesageContent;
-	private String mesageTime;
+	private Integer messageId;
+	private String messageContent;
+	private String messageTime;
 	
-	public Integer getMesageId() {
-		return mesageId;
+	public Integer getMessageId() {
+		return messageId;
 	}
-	public void setMesageId(Integer mesageId) {
-		this.mesageId = mesageId;
+	public void setMessageId(Integer messageId) {
+		this.messageId = messageId;
 	}
-	public String getMesageContent() {
-		return mesageContent;
+	public String getMessageContent() {
+		return messageContent;
 	}
-	public void setMesageContent(String mesageContent) {
-		this.mesageContent = mesageContent;
+	public void setMessageContent(String messageContent) {
+		this.messageContent = messageContent;
 	}
-	public String getMesageTime() {
-		return mesageTime;
+	public String getMessageTime() {
+		return messageTime;
 	}
-	public void setMesageTime(String mesageTime) {
-		this.mesageTime = mesageTime;
+	public void setMessageTime(String messageTime) {
+		this.messageTime = messageTime;
 	}
+	
 
 }
