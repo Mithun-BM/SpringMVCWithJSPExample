@@ -12,7 +12,7 @@
 <title>Message POST Success Details JSP Page</title>
 </head>
 <body>
-	<c:if test="${not empty responseMessage}">
+	<c:if test="${not empty messageResponse}">
 		<h2>Submitted Message Form Information From UI</h2>
 		<br/>
 		<li><c:if test="${not empty messageResponse.messageId}"><c:out value="${messageResponse.messageId}" /></c:if></li>

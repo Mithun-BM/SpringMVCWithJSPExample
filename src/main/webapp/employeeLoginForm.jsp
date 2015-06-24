@@ -11,6 +11,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>SpringMVCHelloWorldJSPExample Employee Login Form JSP
 	Page</title>
+	<style>
+    .error {
+        color: red; font-weight: bold;
+    }
+</style>
 </head>
 <body>
 	<form:form id="postEmpForm" method="post" action="postEmployeeFormData" modelAttribute="employee">
@@ -20,31 +25,37 @@
 				<td align="left"><form:label path="employeeId">Employee Id</form:label></td>
 				<td width="15%" align="left"><form:input id="empId"
 						path="employeeId" size="12" /></td>
+						<td><form:errors path="employeeId" cssClass="error"/></td>
 			</tr>
 			<tr>
 				<td align="left"><form:label path="employeeFirstName">Employee FirstName</form:label></td>
 				<td width="15%" align="left"><form:input id="empFirstName"
 						path="employeeFirstName" size="12" /></td>
+						<td><form:errors path="employeeFirstName" cssClass="error"/></td>
 			</tr>
 			<tr>
 				<td align="left"><form:label path="employeeLastName">Employee LastName</form:label></td>
 				<td width="15%" align="left"><form:input id="empLastName"
 						path="employeeLastName" size="12" /></td>
+						<td><form:errors path="employeeLastName" cssClass="error"/></td>
 			</tr>
 			<tr>
 				<td align="left"><form:label path="employeeAge">Employee Age</form:label></td>
 				<td width="15%" align="left"><form:input id="empAge"
 						path="employeeAge" size="12" /></td>
+						<td><form:errors path="employeeAge" cssClass="error"/></td>
 			</tr>
 			<tr>
 				<td align="left"><form:label path="employeeDOB">Employee DOB</form:label></td>
 				<td width="15%" align="left"><form:input id="empLastName"
 						path="employeeDOB" size="12" /></td>
+						<td><form:errors path="employeeDOB" cssClass="error"/></td>
 			</tr>
 			<tr>
 				<td align="left"><form:label path="employeeEmail">Employee Email</form:label></td>
 				<td width="15%" align="left"><form:input id="empLastName"
 						path="employeeEmail" size="12" /></td>
+						<td><form:errors path="employeeEmail" cssClass="error"/></td>
 			</tr>
 		</table>
 		<br />

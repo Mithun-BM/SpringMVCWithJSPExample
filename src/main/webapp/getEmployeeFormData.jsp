@@ -11,7 +11,7 @@
 </head>
 <body>
 	<form:form id="getEmpForm" method="get"
-		action="getEmployeeFormData" modelAttribute="employeeForm" >
+		action="getEmployeeFormData1stWay" modelAttribute="employeeForm" >
 		<!-- modelAttribute="employee" OR commandName="employee"  modelAttribute="employee" - value should be same as used in Controllers @ModelAttribute(employee) Employee employee -->
 		<table align="center">
 			<tr>
