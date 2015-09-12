@@ -16,17 +16,19 @@ public class EmployeeControllerGetFormData {
 	private static final Logger logger = LoggerFactory
 			.getLogger(EmployeeControllerGetFormData.class);
 
+
+	//First Way
 	@RequestMapping(value = "/getEmployeeFormData1stWay", method = RequestMethod.GET)
 	public String getEmployeeFormData1stWay(Model model) 
 	{
 		logger.info("Entering getEmployeeFormData1stWay()");
 		String returnString = "getEmployeeFormData";
 		EmployeeForm form = null;
-		if(!model.containsAttribute("employeeForm")){
+		if(!model.containsAttribute("employeeForm")){//For this please use modelAttribute="employeeForm" in employeeLoginForm.jsp 
 			form = new EmployeeForm();
 			model.addAttribute("employeeForm",form);
 		}
-		
+
 		form.setEmployeeId(9);
 		form.setEmployeeFirstName("Test 1 FN");
 		form.setEmployeeLastName("Test 1 LN");
@@ -37,14 +39,16 @@ public class EmployeeControllerGetFormData {
 		return returnString;
 	}
 
+	//OR
 
+	//Second Way
 	@RequestMapping(value = "/getEmployeeFormData2ndWay", method = RequestMethod.GET)
 	public String getEmployeeFormData2ndWay(Model model) 
 	{
-	    logger.info("Entering getEmployeeFormData2ndWay()");
+		logger.info("Entering getEmployeeFormData2ndWay()");
 		String returnString = "getEmployeeFormData";
 		Employee form = null;
-		if(!model.containsAttribute("employee")){
+		if(!model.containsAttribute("employee")){//For this please use modelAttribute="employee" in employeeLoginForm.jsp
 			form = new Employee();
 			model.addAttribute("employee",form);
 		}
@@ -58,23 +62,24 @@ public class EmployeeControllerGetFormData {
 		logger.info("Exiting getEmployeeFormData2ndWay()");
 		return returnString;
 	}
-	
-	/*Code Backup - 
 
-	private static final Logger logger = LoggerFactory
+	/*Code Backup - 
+private static final Logger logger = LoggerFactory
 			.getLogger(EmployeeControllerGetFormData.class);
 
+
+	//First Way
 	@RequestMapping(value = "/getEmployeeFormData1stWay", method = RequestMethod.GET)
 	public String getEmployeeFormData1stWay(Model model) 
 	{
 		logger.info("Entering getEmployeeFormData1stWay()");
 		String returnString = "getEmployeeFormData";
 		EmployeeForm form = null;
-		if(!model.containsAttribute("employeeForm")){
+		if(!model.containsAttribute("employeeForm")){//For this please use modelAttribute="employeeForm" in employeeLoginForm.jsp 
 			form = new EmployeeForm();
 			model.addAttribute("employeeForm",form);
 		}
-		
+
 		form.setEmployeeId(9);
 		form.setEmployeeFirstName("Test 1 FN");
 		form.setEmployeeLastName("Test 1 LN");
@@ -85,14 +90,16 @@ public class EmployeeControllerGetFormData {
 		return returnString;
 	}
 
+	//OR
 
+	//Second Way
 	@RequestMapping(value = "/getEmployeeFormData2ndWay", method = RequestMethod.GET)
 	public String getEmployeeFormData2ndWay(Model model) 
 	{
-	    logger.info("Entering getEmployeeFormData2ndWay()");
+		logger.info("Entering getEmployeeFormData2ndWay()");
 		String returnString = "getEmployeeFormData";
 		Employee form = null;
-		if(!model.containsAttribute("employee")){
+		if(!model.containsAttribute("employee")){//For this please use modelAttribute="employee" in employeeLoginForm.jsp
 			form = new Employee();
 			model.addAttribute("employee",form);
 		}
@@ -105,6 +112,7 @@ public class EmployeeControllerGetFormData {
 		form.setEmployeeAge(26);
 		logger.info("Exiting getEmployeeFormData2ndWay()");
 		return returnString;
-	}*/
+	}
+	 */
 
 }

@@ -10,7 +10,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.example.entity.Person;
 
@@ -20,14 +19,16 @@ public class PersonControllerPostFormData {
 	private static final Logger logger = LoggerFactory
 			.getLogger(PersonControllerPostFormData.class);
 
-	/*@RequestMapping(value = "/person", method = RequestMethod.GET) 
-	public ModelAndView showPersonLoginPage2ndWay() { 
-		logger.info("Inside showPersonLoginPage2ndWay()");
+	/*//First Way
+	@RequestMapping(value = "/person", method = RequestMethod.GET) 
+	public ModelAndView showPersonLoginPage1stWay() { 
+		logger.info("Inside showPersonLoginPage1stWay()");
 		return new ModelAndView("personLoginForm", "person", new Person());  
 	}*/
 
 	//OR
 
+	/*//Second Way
 	@ModelAttribute("person")
 	public Person createPersonModel() 
 	{
@@ -36,9 +37,21 @@ public class PersonControllerPostFormData {
 	}
 
 	@RequestMapping(value="/person", method = RequestMethod.GET)
-	public String showPersonLoginPage1stWay() 
+	public String showPersonLoginPage2ndWay() 
 	{
-		logger.info("Inside showPersonLoginPage1stWay()");
+		logger.info("Inside showPersonLoginPage2ndWay()");
+		return "personLoginForm";
+	}*/
+
+	//OR
+	
+	//Third Way
+	@RequestMapping(value = "/person" , method = RequestMethod.GET)
+	public String showPersonLoginPage3rdWay(Model model) {
+		logger.info("Entering showPersonLoginPage3rdWay()");
+		Person personForm = new Person();
+		model.addAttribute("person",personForm);
+		logger.info("Exiting showPersonLoginPage3rdWay()");
 		return "personLoginForm";
 	}
 
@@ -54,5 +67,4 @@ public class PersonControllerPostFormData {
 		}
 		return returnString;
 	}
-
 }

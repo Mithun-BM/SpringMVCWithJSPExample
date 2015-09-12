@@ -5,17 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>SpringMVCWithJSPExample Login Page</title>
-<!-- <script src="jquery-2.1.1.min.js"></script> -->
+ <script src="jquery-2.1.1.min.js"></script> 
 <!-- Downloaded jquery location -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- <script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
 <!--Alternative 1 - ajax.googleapis.com - Google Hosted Libraries jquery -->
 <!-- <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script> -->
 <!--Alternative 2 - code.jquery.com -->
 <!-- <script src="sample.js"></script>  --> <!-- Specifying external java script location  -->
 <!-- <link rel="stylesheet" type="text/css" href="sample.css"> --> <!-- Specifying external css location  -->
-<link rel="stylesheet" type="text/css" href="/home/emithbm/springworkspace/SpringMVCWithJSPExample/src/main/webapp/bootstrap/css/bootstrap.css"> <!-- Specifying external css location  -->
-<link rel="stylesheet" type="text/css" href="/home/emithbm/springworkspace/SpringMVCWithJSPExample/src/main/webapp/bootstrap/css/bootstrap.min.css"> <!-- Specifying external css location  -->
 </head>
 <body>
 	<input type="button" value="HelloWorldController1 GET Message"

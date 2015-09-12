@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.entity.Employee;
-import com.example.form.data.EmployeeForm;
 import com.example.form.validator.EmployeeFormValidator;
 
 @Controller
@@ -20,42 +19,42 @@ public class EmployeeControllerPostFormData {
 	private static final Logger logger = LoggerFactory
 			.getLogger(EmployeeControllerPostFormData.class);
 
-	/*//First Way
+	//First Way
 	@RequestMapping(value = "/employee", method = RequestMethod.GET) 
-	public ModelAndView showEmployeeLoginPage2ndWay() { 
-		logger.info("Inside showEmployeeLoginPage2ndWay()");
+	public ModelAndView showEmployeeLoginPage1stWay() { 
+		logger.info("Inside showEmployeeLoginPage1stWay()");
 		return new ModelAndView("employeeLoginForm", "employee", new Employee());  
-	}*/
+	}
 
 	//OR
 
-	/* //Second Way
+	/*//Second Way
 	@ModelAttribute("employee")
 	public Employee createEmployeeModel() 
 	{
 		logger.info("Inside createEmployeeModel()");
 		return new Employee();
 	}
-	
+
 	@RequestMapping(value="/employee", method = RequestMethod.GET)
-	public String showEmployeeLoginPage1stWay() 
+	public String showEmployeeLoginPage2ndWay() 
 	{
-		logger.info("Inside showEmployeeLoginPage1stWay()");
+		logger.info("Inside showEmployeeLoginPage2ndWay()");
 		return "employeeLoginForm";
 	}*/
 
 	//OR
-	
-	//Third Way
-    @RequestMapping(value = "/employee" , method = RequestMethod.GET)
-    public String showEmployeeLoginPage3rdWay(Model model) {
-    	logger.info("Entering showEmployeeLoginPage3rdWay()");
-        Employee employeeForm = new Employee();
-        model.addAttribute("employee",employeeForm);
-        logger.info("Exiting showEmployeeLoginPage3rdWay()");
-        return "employeeLoginForm";
-    }
-    
+
+	/*//Third Way
+	@RequestMapping(value = "/employee" , method = RequestMethod.GET)
+	public String showEmployeeLoginPage3rdWay(Model model) {
+		logger.info("Entering showEmployeeLoginPage3rdWay()");
+		Employee employeeForm = new Employee();
+		model.addAttribute("employee",employeeForm);
+		logger.info("Exiting showEmployeeLoginPage3rdWay()");
+		return "employeeLoginForm";
+	}*/
+
 	@RequestMapping(value = "/postEmployeeFormData", method = RequestMethod.POST)
 	public String postEmployeeFormData(@ModelAttribute("employee") Employee employee, BindingResult result, Model model) 
 	{
@@ -65,9 +64,8 @@ public class EmployeeControllerPostFormData {
 		if(!result.hasErrors()){
 			model.addAttribute("employeeResponse", employee);
 			logger.info("Exiting postEmployeeFormData()");
-			returnString = "employeePostSuccessDetails";
+			returnString = "employeePostSuccessDetails"; 
 		}
 		return returnString;
 	}
-
 }

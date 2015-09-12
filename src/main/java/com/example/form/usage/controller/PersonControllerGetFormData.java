@@ -7,8 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.example.entity.Employee;
-import com.example.form.data.EmployeeForm;
+import com.example.entity.Person;
 import com.example.form.data.PersonForm;
 
 @Controller
@@ -17,95 +16,116 @@ public class PersonControllerGetFormData {
 	private static final Logger logger = LoggerFactory
 			.getLogger(PersonControllerGetFormData.class);
 
+	//First Way
 	@RequestMapping(value = "/getPersonFormData1stWay", method = RequestMethod.GET)
 	public String getPersonFormData1stWay(Model model) 
 	{
 		logger.info("Entering getPersonFormData1stWay()");
 		String returnString = "getPersonFormData";
 		PersonForm form = null;
-		if(!model.containsAttribute("employeeForm")){
+		if(!model.containsAttribute("personForm")){//For this please use modelAttribute="personForm" in personLoginForm.jsp
 			form = new PersonForm();
-			model.addAttribute("employeeForm",form);
+			model.addAttribute("personForm",form);
 		}
-		
-		/*form.setEmployeeId(9);
-		form.setEmployeeFirstName("Test 1 FN");
-		form.setEmployeeLastName("Test 1 LN");
-		form.setEmployeeEmail("test1@gmail.com");
-		form.setEmployeeDOB("12-09-2015");
-		form.setEmployeeAge(27);*/
-		logger.info("Exiting getEmployeeFormData1stWay()");
+
+		form.setFname("Test1 fname");
+		form.setMname("Test1 mname");
+		form.setLname("Test1 lname");
+		form.setAge(20);
+		form.setCar(3);
+		form.setEmail("Test1@gmail.com");
+		form.setPhoneNumber("9999999999");
+		form.setMaxLengthCheck("3");
+		form.setMinLengthCheck("1");
+
+		logger.info("Exiting getPersonFormData1stWay()");
 		return returnString;
 	}
 
+	//OR
 
+	//Second Way
 	@RequestMapping(value = "/getPersonFormData2ndWay", method = RequestMethod.GET)
 	public String getPersonFormData2ndWay(Model model) 
 	{
-	    logger.info("Entering getPersonFormData2ndWay()");
+		logger.info("Entering getPersonFormData2ndWay()");
 		String returnString = "getPersonFormData";
-		Employee form = null;
-		if(!model.containsAttribute("employee")){
-			form = new Employee();
-			model.addAttribute("employee",form);
+		Person form = null;
+		if(!model.containsAttribute("person")){//For this please use modelAttribute="person" in personLoginForm.jsp
+			form = new Person();
+			model.addAttribute("person",form);
 		}
 
-		form.setEmployeeId(10);
-		form.setEmployeeFirstName("Test 2 FN");
-		form.setEmployeeLastName("Test 2 LN");
-		form.setEmployeeEmail("test2@gmail.com");
-		form.setEmployeeDOB("12-06-2015");
-		form.setEmployeeAge(26);
-		logger.info("Exiting getEmployeeFormData2ndWay()");
+		form.setFname("Test2 fname");
+		form.setMname("Test2 mname");
+		form.setLname("Test2 lname");
+		form.setAge(20);
+		form.setCar(3);
+		form.setEmail("Test2@gmail.com");
+		form.setPhoneNumber("111111111");
+		form.setMaxLengthCheck("4");
+		form.setMinLengthCheck("2");
+
+		logger.info("Exiting getPersonFormData2ndWay()");
 		return returnString;
 	}
-	
-	/*Code Backup - 
+
+	/*Code Backup -
 
 	private static final Logger logger = LoggerFactory
-			.getLogger(EmployeeControllerGetFormData.class);
+	.getLogger(PersonControllerGetFormData.class);
 
-	@RequestMapping(value = "/getEmployeeFormData1stWay", method = RequestMethod.GET)
-	public String getEmployeeFormData1stWay(Model model) 
+	//First Way
+	@RequestMapping(value = "/getPersonFormData1stWay", method = RequestMethod.GET)
+	public String getPersonFormData1stWay(Model model) 
 	{
-		logger.info("Entering getEmployeeFormData1stWay()");
-		String returnString = "getEmployeeFormData";
-		EmployeeForm form = null;
-		if(!model.containsAttribute("employeeForm")){
-			form = new EmployeeForm();
-			model.addAttribute("employeeForm",form);
+		logger.info("Entering getPersonFormData1stWay()");
+		String returnString = "getPersonFormData";
+		PersonForm form = null;
+		if(!model.containsAttribute("personForm")){//For this please use modelAttribute="personForm" in personLoginForm.jsp
+			form = new PersonForm();
+			model.addAttribute("personForm",form);
 		}
-		
-		form.setEmployeeId(9);
-		form.setEmployeeFirstName("Test 1 FN");
-		form.setEmployeeLastName("Test 1 LN");
-		form.setEmployeeEmail("test1@gmail.com");
-		form.setEmployeeDOB("12-09-2015");
-		form.setEmployeeAge(27);
-		logger.info("Exiting getEmployeeFormData1stWay()");
+
+		form.setFname("Test1 fname");
+		form.setMname("Test1 mname");
+		form.setLname("Test1 lname");
+		form.setAge(20);
+		form.setCar(3);
+		form.setEmail("Test1@gmail.com");
+		form.setPhoneNumber("9999999999");
+		form.setMaxLengthCheck("3");
+		form.setMinLengthCheck("1");
+
+		logger.info("Exiting getPersonFormData1stWay()");
 		return returnString;
 	}
 
+	//OR
 
-	@RequestMapping(value = "/getEmployeeFormData2ndWay", method = RequestMethod.GET)
-	public String getEmployeeFormData2ndWay(Model model) 
+	//Second Way
+	@RequestMapping(value = "/getPersonFormData2ndWay", method = RequestMethod.GET)
+	public String getPersonFormData2ndWay(Model model) 
 	{
-	    logger.info("Entering getEmployeeFormData2ndWay()");
-		String returnString = "getEmployeeFormData";
-		Employee form = null;
-		if(!model.containsAttribute("employee")){
-			form = new Employee();
-			model.addAttribute("employee",form);
+		logger.info("Entering getPersonFormData2ndWay()");
+		String returnString = "getPersonFormData";
+		Person form = null;
+		if(!model.containsAttribute("person")){//For this please use modelAttribute="person" in personLoginForm.jsp
+			form = new Person();
+			model.addAttribute("person",form);
 		}
 
-		form.setEmployeeId(10);
-		form.setEmployeeFirstName("Test 2 FN");
-		form.setEmployeeLastName("Test 2 LN");
-		form.setEmployeeEmail("test2@gmail.com");
-		form.setEmployeeDOB("12-06-2015");
-		form.setEmployeeAge(26);
-		logger.info("Exiting getEmployeeFormData2ndWay()");
+		form.setFname("Test2 fname");
+		form.setMname("Test2 mname");
+		form.setLname("Test2 lname");
+		form.setAge(20);
+		form.setCar(3);
+		form.setEmail("Test2@gmail.com");
+		form.setPhoneNumber("111111111");
+		form.setMaxLengthCheck("4");
+		form.setMinLengthCheck("2");
+
+		logger.info("Exiting getPersonFormData2ndWay()");
 		return returnString;
 	}*/
-
 }

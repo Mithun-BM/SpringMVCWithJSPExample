@@ -12,7 +12,7 @@
 <body>
 	<form:form id="getEmpForm" method="get"
 		action="getEmployeeFormData1stWay" modelAttribute="employeeForm" >
-		<!-- modelAttribute="employee" OR commandName="employee"  modelAttribute="employee" - value should be same as used in Controllers @ModelAttribute(employee) Employee employee -->
+		<!-- modelAttribute="employeeForm" OR commandName="employeeForm" - value should be same as used in Controllers !model.containsAttribute("employeeForm") -->
 		<table align="center">
 			<tr>
 				<td align="left"><form:label path="employeeId">Employee Id</form:label></td>
@@ -21,12 +21,12 @@
 			</tr>
 			<tr>
 				<td align="left"><form:label path="employeeFirstName">Employee FirstName</form:label></td>
-				<td width="15%" align="left"><form:input id="empFirstName"
+				<td width="15%" align="left"><form:input id="empFName"
 						path="employeeFirstName" size="12" /></td>
 			</tr>
 			<tr>
 				<td align="left"><form:label path="employeeLastName">Employee LastName</form:label></td>
-				<td width="15%" align="left"><form:input id="empLastName"
+				<td width="15%" align="left"><form:input id="empLName"
 						path="employeeLastName" size="12" /></td>
 			</tr>
 			<tr>
@@ -36,12 +36,12 @@
 			</tr>
 			<tr>
 				<td align="left"><form:label path="employeeDOB">Employee DOB</form:label></td>
-				<td width="15%" align="left"><form:input id="empLastName"
+				<td width="15%" align="left"><form:input id="empDOB"
 						path="employeeDOB" size="12" /></td>
 			</tr>
 			<tr>
 				<td align="left"><form:label path="employeeEmail">Employee Email</form:label></td>
-				<td width="15%" align="left"><form:input id="empLastName"
+				<td width="15%" align="left"><form:input id="empEmail"
 						path="employeeEmail" size="12" /></td>
 			</tr>
 		</table>
